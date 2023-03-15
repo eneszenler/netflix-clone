@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Banner from '../components/Banner'
 import Header from '../components/Header'
+import Row from '../components/Row'
 import { Movie } from '../typing'
 import requests from '../utils/requests'
 
@@ -35,7 +36,13 @@ const Home = ({
       <Header />
       <main className='relative px-4 pb-24 lg:space-y-24 lg:px-16'>
         <Banner netflixOriginals={netflixOriginals} />
-
+        <Row title="Trending Now" data={trendingNow} />
+        <Row title="Top Rated" data={topRated} />
+        <Row title="Comedies" data={comedyMovies} />
+        <Row title="Action Thrillers" data={actionMovies} />
+        <Row title="Horror Movies" data={horrorMovies} />
+        <Row title="Romance Movies" data={romanceMovies} />
+        <Row title="Documentaries" data={documentaries} />
       </main>
     </div>
   )
