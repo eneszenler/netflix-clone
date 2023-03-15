@@ -13,17 +13,6 @@ const Row = ({ title, data }: Props) => {
     const [prev, setPrev] = useState(false)
     const [next, setNext] = useState(false)
 
-    // const handleClick = (direction: String) => {
-    //     setPrev(true)
-    //     if (rowRef.current) {
-    //         const { scrollLeft, clientWidth } = rowRef.current
-
-    //         const scrollTo = direction === "left" ? scrollLeft - clientWidth : scrollLeft + clientWidth
-
-    //         rowRef.current.scrollTo({ left: scrollTo, behavior: "smooth" })
-    //     }
-    // }
-
     useEffect(() => {
         if (rowRef.current) {
 
