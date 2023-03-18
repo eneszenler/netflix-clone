@@ -1,8 +1,11 @@
-import type { NextPage } from 'next'
 import Head from 'next/head'
+import { useRecoilState } from 'recoil'
+import { modalState } from '../atoms/modalAtom'
 import Banner from '../components/Banner'
 import Header from '../components/Header'
+import CustomModal from '../components/CustomModal'
 import Row from '../components/Row'
+import useAuth from '../hooks/useAuth'
 import { Movie } from '../typing'
 import requests from '../utils/requests'
 
@@ -27,11 +30,17 @@ const Home = ({
   topRated,
   trendingNow,
 }: Props) => {
+  const { loading } = useAuth()
+
+  const showModal = useRecoilState(modalState)
+
+  if (loading) return null
+
   return (
     <div className='relative h-screen bg-gradient-to-b lg:h-[140vh]'>
       <Head>
-        <title>Home</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Netflix</title>
+        <link rel="icon" href="https://raw.githubusercontent.com/karlhadwen/netflix/master/public/favicon.ico" />
       </Head>
       <Header />
       <main className='relative px-4 pb-24 lg:space-y-24 lg:px-16'>
@@ -44,6 +53,7 @@ const Home = ({
         <Row title="Romance Movies" data={romanceMovies} />
         <Row title="Documentaries" data={documentaries} />
       </main>
+      {showModal && <CustomModal />}
     </div>
   )
 }

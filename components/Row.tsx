@@ -4,7 +4,7 @@ import { Movie } from "../typing"
 import Thumbnail from "./Thumbnail"
 
 interface Props {
-    title: String
+    title: string
     data: Movie[]
 }
 
