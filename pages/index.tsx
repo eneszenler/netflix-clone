@@ -17,7 +17,7 @@ interface Props {
   comedyMovies: Movie[]
   horrorMovies: Movie[]
   romanceMovies: Movie[]
-  documentaries: Movie[]
+  documentaries: Movie[] 
 }
 
 const Home = ({
@@ -40,7 +40,7 @@ const Home = ({
     <div className='relative h-screen bg-gradient-to-b lg:h-[140vh]'>
       <Head>
         <title>Netflix</title>
-        <link rel="icon" href="https://raw.githubusercontent.com/karlhadwen/netflix/master/public/favicon.ico" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
       <main className='relative px-4 pb-24 lg:space-y-24 lg:px-16'>
