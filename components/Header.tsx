@@ -2,6 +2,7 @@ import { BellIcon, MagnifyingGlassIcon } from "@heroicons/react/20/solid";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import useAuth from "../hooks/useAuth";
+import BasicMenu from "./BasicMenu";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -31,6 +32,8 @@ const Header = () => {
           height={100}
           className="cursor-pointer object-contain"
         />
+
+        <BasicMenu />
 
         <ul className="hidden md:flex space-x-4">
           <li className="headerLink">Home</li>
